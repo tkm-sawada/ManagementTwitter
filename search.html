@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>ManagementTwitter</title>
+<style type="text/css">
+    .tweetlist {
+        display: flex;
+        flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+<!----- header----->
+<header></header>
+<nav></nav>
+<!----- /header ----->
+
+<!----- main ----->
+<article>
+<h1><a href='/'style="color:black;text-decoration: none;">ManagementTwitter</a></h1>
+
+<section>
+    <form method="POST" action="/serch/">
+        <input type="text" name="serchtext">
+        <input type="submit" name="serchbutton" value="検索">
+    </form>
+</section>
+<section>
+    <div class="tweetlist">
+        {{range .}}
+        <blockquote class="twitter-tweet">
+            <p lang="ja" dir="ltr">{{.Text}}</p>&mdash; {{.User}} (@{{.ScreenName}}) <a href='https://twitter.com/{{.Id}}/status/{{.TweetId}}'>{{.Date}}</a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        {{end}}
+    </div>
+</section>
+</article>
+<!----- /main ----->
+
+<!----- footer ----->
+<footer></footer>
+<!----- /footer ----->
+</body>
+</html>
+
+

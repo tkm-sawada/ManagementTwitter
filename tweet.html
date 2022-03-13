@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>ManagementTwitter</title>
+<style type="text/css">
+    section{
+        margin: 10px;
+    }
+    .block {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgb(80, 80, 80);
+    }
+    .tweetlist {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    input[name="trendtimer"]{
+        width: 50px;
+    }
+  </style>
+</head>
+<body>
+<!----- header----->
+<header></header>
+<nav></nav>
+<!----- /header ----->
+
+<!----- main ----->
+<article>
+<h1><a href='/'style="color:black;text-decoration: none;">ManagementTwitter</a></h1>
+
+<section>
+    <div class="block">
+        <form method="POST" action="/tweet/">
+            <input type="text" name="tweettext">
+            <input type="submit" name="tweetbutton" value="つぶやく">
+        </form>
+    </div>
+</section>
+<section>
+    <div class="tweetlist">
+        <blockquote class="twitter-tweet">
+            <p lang="ja" dir="ltr">{{.Text}}</p>&mdash; {{.User}} (@{{.ScreenName}}) <a href='https://twitter.com/{{.Id}}/status/{{.TweetId}}'>{{.Date}}</a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+</section>
+</article>
+<!----- /main ----->
+
+<!----- footer ----->
+<footer></footer>
+<!----- /footer ----->
+</body>
+</html>
+
+

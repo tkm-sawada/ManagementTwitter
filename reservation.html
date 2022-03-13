@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>ManagementTwitter</title>
+<style type="text/css">
+  </style>
+</head>
+<body>
+<!----- header----->
+<header></header>
+<nav></nav>
+<!----- /header ----->
+
+<!----- main ----->
+<article>
+<h1><a href='/'style="color:black;text-decoration: none;">ManagementTwitter</a></h1>
+
+<section>
+    <div class="block">
+        
+        <form method="POST" action="/reservation/">
+            投稿日時　<input type="text" name="date" value="{{.Date}}"><br>
+            つぶやき　<input type="text" name="text" value="{{.Text}}"><br>
+            予約フラグ<select name="flg" >
+                <option value="0" {{ if eq .Flg 0 }}selected{{ end }}>ツイート待ち</option>
+                <option value="1" {{ if eq .Flg 1 }}selected{{ end }}>済</option>
+            </select><br>
+            <input type="submit" name="reservation" value="予約">
+        </form>
+    </div>
+</section>
+</article>
+<!----- /main ----->
+
+<!----- footer ----->
+<footer></footer>
+<!----- /footer ----->
+</body>
+</html>
+
+
